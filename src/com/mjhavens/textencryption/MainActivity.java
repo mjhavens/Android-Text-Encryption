@@ -20,8 +20,6 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.aqhrazrkjsqtqqiqm.AdController;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Color;
