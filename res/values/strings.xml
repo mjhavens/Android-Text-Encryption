@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AES Text Encryption</string>
+    <string name="action_settings">Settings</string>
+	<string name="topText">Text to Encrypt:</string>
+	<string name="decryptText">Decrypt</string>
+	<string name="encryptText">Encrypt</string>
+	<string name="keyText">Key:</string>
+	<string name="cryptedText">AES/Base 64 Cipher Text:</string>
+	<string name="output">There is no text to output</string>
+	
+</resources>
