@@ -2,7 +2,7 @@
  * @author: MJ Havens
  * 
  * This class is mainly used for encrypting purposes.
- * It encryptes, decryptes, encodes, and decodes plaintext and ciphertext.
+ * It encrypts, decrypts, encodes, and decodes plaintext and ciphertext.
  */
 package com.mjhavens.textencryption;
 
