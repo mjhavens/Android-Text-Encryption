@@ -8,6 +8,14 @@
 package com.mjhavens.textencryption;
 
 
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -20,8 +28,7 @@ public class MainActivity extends Activity
 {
 	private EditText			textInput;
 	private EditText			keyInput;
-	private TextView			outputText;
-	private TextView			cryptedText;
+	private TextView			errorText;
 	private Button				encrypt;
 	private Button				decrypt;
 	private String				inputText	= null;
@@ -41,9 +48,7 @@ public class MainActivity extends Activity
 		encrypt = (Button) findViewById(R.id.btnEncrypt);
 		decrypt = (Button) findViewById(R.id.btnDecrypt);
 		keyInput = (EditText) findViewById(R.id.keyInput);
-		outputText = (TextView) findViewById(R.id.outputText);
-		cryptedText = (TextView) findViewById(R.id.cryptedText);
-
+		errorText = (TextView) findViewById(R.id.errorText);
 		
 		// Sets the listener each time the encrypt button is hit.
 		encrypt.setOnClickListener(new View.OnClickListener()
@@ -59,17 +64,16 @@ public class MainActivity extends Activity
 				{
 					if (inputText.isEmpty() || keyText.isEmpty())
 					{
-						cryptedText.setText("Error:");
-						outputText
+						errorText.setText("Error:");
+						errorText
 								.setText("Please set your plaintext and key before encrypting.");
 					}
 					else
 					{
-						cryptedText.setText("AES/Base 64 Cipher Text:");
 						encrypter.prepareKeyForEncryption(keyText);
 						encrypter.encryptWithAES(encrypter.getSecretKeyBytes(),
 								inputText);
-						outputText.setText(encrypter.getBase64CipherText());
+						textInput.setText(encrypter.getBase64CipherText());
 					}
 				}
 				catch (Exception e)
@@ -86,20 +90,21 @@ public class MainActivity extends Activity
 			public void onClick(View v)
 			{
 				Log.d("App", "Click decrypt");
-
+				inputText = textInput.getText().toString();
+				keyText = keyInput.getText().toString();
+				
 				try
 				{
 					if (encrypter.getBase64CipherText() == null)
 					{
-						cryptedText.setText("Error: ");
-						outputText.setText("There is nothing to decrypt!");
+						errorText.setText("Error: ");
+						errorText.setText("There is nothing to decrypt!");
 					}
 					else
 					{
-						cryptedText.setText("Plaintext:");
 						encrypter.decryptAES(encrypter.getSecretKeyBytes(),
-								encrypter.getBase64CipherText());
-						outputText.setText(encrypter.getDecryptedText());
+								inputText);
+						textInput.setText(encrypter.getDecryptedText());
 					}
 				}
 				catch (Exception e)

@@ -164,6 +164,7 @@ public class EncryptionActivity extends Activity
 	 */
 	public String getBase64CipherText()
 	{
+		Log.d("APP", "base64CipherText: " + base64CipherText);
 		return base64CipherText;
 	}
 }

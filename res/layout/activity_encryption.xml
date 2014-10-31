@@ -37,29 +37,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/keyInput"
         android:text="@string/encryptText" />
-
-    <TextView
-        android:id="@+id/cryptedText"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnEncrypt"
-        android:paddingTop="20dp"
-        android:text="@string/cryptedText"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/outputText"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cryptedText"
-        android:text="@string/output"
-        android:inputType="text" />
-
+    
     <Button
         android:id="@+id/btnDecrypt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/outputText"
+        android:layout_toRightOf="@+id/btnEncrypt"
+        android:layout_toEndOf="@+id/btnEncrypt"
+        android:layout_below="@+id/keyInput"
         android:text="@string/decryptText" />
+    
+   <TextView
+        android:id="@+id/errorText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnEncrypt" />
 
 </RelativeLayout>
