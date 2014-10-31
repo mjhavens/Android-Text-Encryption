@@ -7,7 +7,6 @@
 	<string name="decryptText">Decrypt</string>
 	<string name="encryptText">Encrypt</string>
 	<string name="keyText">Secret Key:</string>
-	<string name="cryptedText">AES/Base 64 Cipher Text:</string>
 	<string name="output">There is no text to output</string>
 	
 </resources>

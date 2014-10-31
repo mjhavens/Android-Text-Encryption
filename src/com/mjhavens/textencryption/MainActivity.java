@@ -7,15 +7,6 @@
 
 package com.mjhavens.textencryption;
 
-
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
