@@ -14,7 +14,8 @@
         android:id="@+id/textInput"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/topText" />
+        android:layout_below="@+id/topText" 
+        android:inputType="text"/>
 
     <TextView
         android:id="@+id/keyText"
@@ -27,7 +28,8 @@
         android:id="@+id/keyInput"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/keyText" />
+        android:layout_below="@+id/keyText" 
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/btnEncrypt"
@@ -45,12 +47,13 @@
         android:text="@string/cryptedText"
         android:textStyle="bold" />
 
-    <TextView
+    <EditText
         android:id="@+id/outputText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cryptedText"
-        android:text="@string/output" />
+        android:text="@string/output"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/btnDecrypt"
